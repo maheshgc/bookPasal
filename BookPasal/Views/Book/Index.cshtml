@@ -1,0 +1,18 @@
+﻿@model List<BookPasal.Models.Book>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Book Id</th>
+        <th>Book Name</th>
+        <th>Author Name</th>
+    </tr>
+    @foreach (var book in Model)
+    {
+<tr>
+    <td>@book.BookId</td>
+    <td>@book.BookName</td>
+    <td>@book.AuthorName</td>
+</tr>
+
+    }
+</table>
