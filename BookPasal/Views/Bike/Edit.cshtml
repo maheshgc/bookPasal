@@ -1,9 +1,10 @@
 ﻿@model BookPasal.Models.Bike
 
-<h4>Bike Form</h4>
+<h4>Edit Bike Form</h4>
 
 <form method="post" asp-action="Edit">
 
+    <input type="hidden" asp-for="BikeId" />
     <label>Bike Name:</label>
     <input asp-for="BikeName" />
     <br />
@@ -14,6 +15,6 @@
     <input asp-for="BikeNo" />
     <br />
 
-    <input type="Submit" value="Create" />
+    <input type="Submit" value="Update" />
 
 </form>

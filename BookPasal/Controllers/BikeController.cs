@@ -46,9 +46,25 @@ namespace BookPasal.Controllers
          
         public IActionResult Details(int id)
         {
-            //Bike bike = new Bike() { BikeId = 1, BikeName = "pulsar", BikeNo = 123 };
-            // select * from bikes where BikeId = 1 
             Bike bike = db.Bikes.Find(id);
+            return View(bike);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            Bike bike = db.Bikes.Find(id);
+            return View(bike);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Bike bike)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Bikes.Update(bike);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View(bike);
         }
     }
