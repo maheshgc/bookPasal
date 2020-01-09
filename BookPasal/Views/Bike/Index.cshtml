@@ -1,0 +1,23 @@
+﻿@model List<BookPasal.Models.Bike>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Bike Id</th>
+        <th>Bike Name</th>
+        <th>Bike No</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var bike in Model)
+    {
+<tr>
+    <td>@bike.BikeId</td>
+    <td>@bike.BikeName</td>
+    <td>@bike.BikeNo</td>
+    <td>
+        <a class="btn btn-primary" asp-controller="Bike" asp-action="Details" asp-route-id="@bike.BikeId">View</a>
+        <a class="btn btn-primary" asp-controller="Bike" asp-action="Edit" asp-route-id="@bike.BikeId">Edit</a>
+    </td>
+</tr>
+
+    }
+</table>

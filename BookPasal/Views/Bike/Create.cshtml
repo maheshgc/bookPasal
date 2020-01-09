@@ -1,0 +1,19 @@
+﻿@model BookPasal.Models.Bike
+
+<h4>Bike Form</h4>
+
+<form method="post" asp-action="Create">
+
+    <label>Bike Name:</label>
+    <input asp-for="BikeName"/>
+    <br/>
+    <span class="text-danger" asp-validation-for="BikeName"></span>
+    <br />
+
+    <label>Bike No:</label>
+    <input asp-for="BikeNo" />
+    <br />
+
+    <input type="Submit" value="Create" />
+
+</form>

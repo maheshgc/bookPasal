@@ -5,6 +5,7 @@
         <th>Book Id</th>
         <th>Book Name</th>
         <th>Author Name</th>
+        <th>Actions</th>
     </tr>
     @foreach (var book in Model)
     {
@@ -12,7 +13,13 @@
     <td>@book.BookId</td>
     <td>@book.BookName</td>
     <td>@book.AuthorName</td>
+    <td><a>View</a></td>
 </tr>
 
     }
 </table>
+
+
+
+
+@*<asp-route-id*@
