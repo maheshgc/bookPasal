@@ -1,23 +1,42 @@
 ﻿@model List<BookPasal.Models.Bike>
 
-<table class="table table-bordered">
+
+<h1>Bike List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
     <tr>
         <th>Bike Id</th>
         <th>Bike Name</th>
         <th>Bike No</th>
+        <th>File Name</th>
         <th>Actions</th>
     </tr>
     @foreach (var bike in Model)
     {
-<tr>
-    <td>@bike.BikeId</td>
-    <td>@bike.BikeName</td>
-    <td>@bike.BikeNo</td>
-    <td>
-        <a class="btn btn-primary" asp-controller="Bike" asp-action="Details" asp-route-id="@bike.BikeId">View</a>
-        <a class="btn btn-primary" asp-controller="Bike" asp-action="Edit" asp-route-id="@bike.BikeId">Edit</a>
-    </td>
-</tr>
+        <tr>
+            <td>@bike.BikeId</td>
+            <td>@bike.BikeName</td>
+            <td>@bike.BikeNo</td>
+            <td>
+                @if (bike.ImageName != null)
+                {
+                    <img src="~/Images/@bike.ImageName" class="img-fluid img-thumbnail" width="100" height="50" />
+                }
+                else
+                {
+                    <img src="~/Images/bike-default.png" class="img-fluid img-thumbnail" width="100" height="50" />
+                }
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-controller="Bike" asp-action="Details" asp-route-id="@bike.BikeId">View</a>
+                <a class="btn btn-primary" asp-controller="Bike" asp-action="Edit" asp-route-id="@bike.BikeId">Edit</a>
+                <a class="btn btn-primary" asp-controller="Bike" asp-action="Delete" asp-route-id="@bike.BikeId" onclick = "return confirm('Are you sure you want to delete this data?');">Delete</a>
+            </td>
+        </tr>
 
     }
 </table>

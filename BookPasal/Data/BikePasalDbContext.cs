@@ -14,10 +14,9 @@ namespace BookPasal.Data
 
         }
 
+        // public Dbset<ModelName> TableName { get; set; }
         public DbSet<Bike> Bikes { get; set; }
 
-        public DbSet<BookPasal.Models.Book> Book { get; set; }
-
-
+        public DbSet<Book> Book { get; set; }
     }
 }

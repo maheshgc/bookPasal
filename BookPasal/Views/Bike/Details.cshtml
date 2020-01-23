@@ -2,7 +2,31 @@
 
 <h4>Bike Details:</h4>
 
-Bike Id: @Model.BikeId <br/>
-Bike Name: @Model.BikeName <br/>
-Bike No: @Model.BikeNo 
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BikeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        @if (Model.ImageName != null)
+        {
+            <img src="~/Images/@Model.ImageName" class="img-fluid img-thumbnail" width="400" height="200" />
+        }
+        else
+        {
+            <img src="~/Images/bike-default.png" class="img-fluid img-thumbnail" width="400" height="200" />
+        }
+    </div>
+    <div class="col-md-4">
+        <h6>Info:</h6>
+        <hr/>
+        Bike Id: @Model.BikeId <br />
+        Bike Name: @Model.BikeName <br />
+        Bike No: @Model.BikeNo  <br />
+
+    </div>
+</div>
+
+
 
